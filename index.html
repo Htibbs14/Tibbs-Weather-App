@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+        <div class="card main-card">
+            <div class="card-body">
+                <div><button id=currentButton>Current</button></div>
+      <p class="popular-cities">New York - London - Los Angeles - Austin</p>
+      <form>
+        <input
+          type="text"
+          placeholder="Type city here"
+          id="type-city"
+          autocomplete="off"
+        />
+        <input type="submit" value="Search" class="search" />
+      </form>
+          <h1 id=location>Salt Lake City</h1>
+          <h2>
+            Wed, January 26
+            <br />
+            9:31 PM
+          </h2>
+          <h3 id=description>
+            Light Drizzle
+          </h3>
+          <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <div class= "tempInfo">
+          <p><span id=main-temp class="main-temp">
+            66
+          </span>
+            <span class="temp-types"> <p
+           id="far" class="farTemp">°F</p>
+          </span>
+        </div>
+          
+        </div>
+        <div class="col-6">
+          <span class:"col-6">
+            <br/>
+            <ul>
+              <li>Feels like <span id=feels-like>61</span> °F</li>
+                <li>Humidity <span id=humidity>65</span>%</li>
+                  <li>Wind <span id=wind>2</span> mph</li>
+                  </ul>
+                  </span></p>
+        </div>
+          </div> </div>
+       
+          <p class="main-emoji">⛅</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2">
+          <span class="days"> Thursday </span><br /><span class="day-temps"
+            >30°/ 9°</span
+          ><br /><span class="day-emoji">⛅</span>
+        </div>
+        <div class="col-sm-2">
+          <span class="days"> Friday</span><br /><span class="day-temps"
+            >36°/ 14°</span
+          ><br /><span class="day-emoji">⛅</span>
+        </div>
+        <div class="col-sm-2">
+          <span class="days"> Saturday</span><br /><span class="day-temps"
+            >39°/ 14°</span
+          ><br /><span class="day-emoji">⛅</span>
+        </div>
+        <div class="col-sm-2">
+          <span class="days"> Sunday</span><br /><span class="day-temps"
+            >39°/ 18°</span
+          ><br /><span class="day-emoji">⛅</span>
+        </div>
+        <div class="col-sm-2">
+          <span class="days"> Monday</span><br /><span class="day-temps"
+            >32°/ 12°</span
+          ><br /><span class="day-emoji">⛅</span>
+        </div>
+        <div class="col-sm-2">
+          <span class="days"> Tuesday</span><br /><span class="day-temps"
+            >29°/ 10°</span
+          ><br /><span class="day-emoji">⛅</span>
+        </div>
+     
+    <script src="src/index.js"></script>
+  </body>
+</html>
