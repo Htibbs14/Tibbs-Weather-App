@@ -38,6 +38,8 @@ button {
   padding: 5px 15px;
   display: block;
   margin: 0 auto;
+  border-radius: 4px;
+  font-weight: bold;
 }
 .popular-cities {
   font-size: 14px;
