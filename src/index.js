@@ -6,6 +6,7 @@ function cityTemp(response) {
   let hum = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
   let description = response.data.weather[0].description;
+  let icon = response.data.weather[0].icon;
   let city = document.querySelector("#location");
   city.innerHTML = `${location}`;
   let temperature = document.querySelector("#main-temp");
@@ -18,6 +19,11 @@ function cityTemp(response) {
   windSpeed.innerHTML = `${wind}`;
   let weatherDescription = document.querySelector("#description");
   weatherDescription.innerHTML = `${description}`;
+  let weatherIcon = document.querySelector("#icon");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${icon}@2x.png`
+  );
 }
 
 function cityInput(event) {

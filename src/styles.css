@@ -20,6 +20,10 @@ form {
 row {
   text-align: center;
 }
+img {
+  position: relative;
+  bottom: 15px;
+}
 ul {
   font-size: 13px;
   padding: 0;
@@ -65,7 +69,7 @@ small {
 .main-card {
   border-width: 3px;
   padding: 5px;
-  width: 520px;
+  width: 500px;
   margin: 0 auto;
 }
 .farTemp {
