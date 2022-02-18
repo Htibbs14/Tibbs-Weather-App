@@ -47,6 +47,10 @@ small {
   font-size: 62px;
   margin: 0;
 }
+#weather-container {
+  padding-top: 0;
+  max-width: 500px;
+}
 .container {
   padding-top: 30px;
   max-width: 500px;
