@@ -71,6 +71,30 @@ function showFarTemp(event) {
   tempurature.innerHTML = Math.round(fahrenheitTemperature);
 }
 
+function showForecast() {
+  let forecast = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+<div class="col-2">
+  <div class="weather-forecast-date">${day}</div>
+  <div class="weather-forecast-img">
+  <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" width="42" />
+  </div>
+  <div class="weather-forecast-temps">
+    <span class="weather-forecast-temps-max">18°</span>/<span class="weather-forecast-temps-min">12°</span>
+      
+</div>
+</div>
+    `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+
 let fahrenheitTemperature = null;
 
 let button = document.querySelector("button");
@@ -110,3 +134,5 @@ celLink.addEventListener("click", showCelTemp);
 
 let farLink = document.querySelector("#far");
 farLink.addEventListener("click", showFarTemp);
+
+showForecast();
