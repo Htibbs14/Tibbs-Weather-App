@@ -25,6 +25,14 @@ function cityTemp(response) {
     `http://openweathermap.org/img/wn/${icon}@2x.png`
   );
   fahrenheitTemperature = response.data.main.temp;
+
+  getForecast(response.data.coord);
+}
+
+function getForecast(coordinates) {
+  let apiKey = "c176156c8c25cae90d4b83c175b81e5f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(showForecast);
 }
 
 function cityInput(event) {
@@ -44,8 +52,6 @@ function showPosition(position) {
   let units = "imperial";
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
   axios.get(url).then(cityTemp);
-  console.log(latitude);
-  console.log(longitude);
 }
 navigator.geolocation.getCurrentPosition(showPosition);
 
@@ -71,25 +77,42 @@ function showFarTemp(event) {
   tempurature.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-function showForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function showForecast(response) {
+  let forecastRes = response.data.daily;
   let forecast = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+
+  forecastRes.forEach(function (forecastDay, index) {
+    if (index < 6) {
     forecastHTML =
       forecastHTML +
       `
 <div class="col-2">
-  <div class="weather-forecast-date">${day}</div>
+  <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
   <div class="weather-forecast-img">
-  <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" width="42" />
+  <img src="http://openweathermap.org/img/wn/${
+    forecastDay.weather[0].icon
+  }@2x.png" alt="" width="42" />
   </div>
   <div class="weather-forecast-temps">
-    <span class="weather-forecast-temps-max">18°</span>/<span class="weather-forecast-temps-min">12°</span>
+    <span class="weather-forecast-temps-max" id="max">${Math.round(
+      forecastDay.temp.max
+    )}°</span>/<span class="weather-forecast-temps-min" id="min">${Math.round(
+        forecastDay.temp.min
+      )}°</span>
       
 </div>
 </div>
     `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecast.innerHTML = forecastHTML;
@@ -104,7 +127,6 @@ let search = document.querySelector("form");
 search.addEventListener("submit", cityInput);
 
 let now = new Date();
-console.log(now);
 
 let days = [
   "Sunday",
@@ -134,5 +156,3 @@ celLink.addEventListener("click", showCelTemp);
 
 let farLink = document.querySelector("#far");
 farLink.addEventListener("click", showFarTemp);
-
-showForecast();
