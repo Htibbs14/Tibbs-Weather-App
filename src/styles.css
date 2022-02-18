@@ -1,16 +1,18 @@
 h1 {
   text-align: center;
-  color: black;
+  color: rgb(61, 56, 56);
   font-weight: bolder;
   font-size: 32px;
 }
 h2 {
   text-align: center;
   font-size: 18px;
+  color: rgb(61, 56, 56);
 }
 h3 {
   text-align: center;
   font-size: 16px;
+  color: rgb(61, 56, 56);
 }
 form {
   text-align: center;
@@ -32,7 +34,7 @@ li {
   list-style: None;
 }
 button {
-  padding: 5px 10px;
+  padding: 3px 10px;
   display: block;
   margin: 0 auto;
   border-radius: 4px;
@@ -40,6 +42,13 @@ button {
 }
 small {
   text-align: center;
+}
+a {
+  text-decoration: none;
+  color: blue;
+}
+.search {
+  border-radius: 4px;
 }
 .tempInfo {
   text-align: center;
@@ -50,6 +59,10 @@ small {
   padding-right: 4px;
   font-size: 62px;
   margin: 0;
+  color: rgb(61, 56, 56);
+}
+.col-sm-5 {
+  color: rgb(61, 56, 56);
 }
 #weather-container {
   padding-top: 0;
@@ -61,22 +74,31 @@ small {
 }
 .main-emoji {
   font-size: 50px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .temp-types {
-  font-size: 17px;
+  font-size: 13px;
+  font-weight: normal;
+  position: relative;
+  bottom: 34px;
 }
 .main-card {
   border-width: 3px;
   padding: 5px;
   width: 500px;
   margin: 0 auto;
-}
-.farTemp {
-  font-size: 20px;
-  font-weight: 600;
+  border-radius: 6px;
 }
 
 a:hover {
   color: rgb(179, 10, 142);
+}
+
+.active {
+  color: black;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
+  color: black;
 }
