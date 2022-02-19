@@ -1,6 +1,7 @@
 body {
-  background-color: #d9f5e2;
+  background-color: rgba(154, 208, 236, 0.3);
 }
+
 h1 {
   text-align: center;
   color: black;
@@ -16,6 +17,8 @@ h3 {
   text-align: center;
   font-size: 13px;
   color: rgb(61, 56, 56);
+}
+h3:first-letter {
   text-transform: capitalize;
 }
 form {
@@ -37,16 +40,7 @@ ul {
 li {
   list-style: None;
 }
-button {
-  padding: 1px 7px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 4px;
-  font-weight: 500;
-  font-size: 15px;
-  background-color: #d0a5ec;
-  border-color: #c185e9;
-}
+
 small {
   text-align: center;
   margin-bottom: 10px;
@@ -62,18 +56,38 @@ hr {
   color: rgb(160, 158, 158);
 }
 
+#currentButton {
+  padding: 3px 10px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 15px;
+  background-color: #c78eec;
+  border-color: #9ad0ec;
+}
+
+#currentButton:hover {
+  background-color: #a45fd3;
+}
+
 .search-box {
   border-color: rgb(179, 175, 175);
 }
 .btn-primary {
-  background-color: #d0a5ec;
-  border-color: #c185e9;
+  background-color: #c78eec;
+  border-color: #9ad0ec;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: #a45fd3;
 }
 .search {
   border-radius: 4px;
   font-weight: 500;
   background-color: #d0a5ec;
-  border-color: #c185e9;
+  border-color: #9ad0ec;
 }
 .tempInfo {
   text-align: center;
@@ -108,11 +122,12 @@ hr {
   bottom: 32px;
 }
 .main-card {
-  border-width: 1px;
+  border-width: 3px;
   padding: 5px;
   width: 500px;
   margin: 0 auto;
   border-radius: 12px;
+  border-color: #d0a5ec;
 }
 
 a:hover {
