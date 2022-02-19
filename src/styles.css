@@ -1,3 +1,6 @@
+body {
+  background-color: #d9f5e2;
+}
 h1 {
   text-align: center;
   color: black;
@@ -6,19 +9,19 @@ h1 {
 }
 h2 {
   text-align: center;
-  font-size: 18px;
+  font-size: 15px;
   color: rgb(61, 56, 56);
 }
 h3 {
   text-align: center;
-  font-size: 16px;
+  font-size: 13px;
   color: rgb(61, 56, 56);
   text-transform: capitalize;
 }
 form {
   text-align: center;
-  padding: 20px;
-  margin-bottom: 5px;
+  padding: 10px;
+  padding-top: 20px;
 }
 row {
   text-align: center;
@@ -35,21 +38,42 @@ li {
   list-style: None;
 }
 button {
-  padding: 3px 10px;
+  padding: 1px 7px;
   display: block;
   margin: 0 auto;
   border-radius: 4px;
-  font-weight: normal;
+  font-weight: 500;
+  font-size: 15px;
+  background-color: #d0a5ec;
+  border-color: #c185e9;
 }
 small {
   text-align: center;
+  margin-bottom: 10px;
 }
 a {
   text-decoration: none;
   color: blue;
 }
+hr {
+  width: 400px;
+  position: relative;
+  right: -40px;
+  color: rgb(160, 158, 158);
+}
+
+.search-box {
+  border-color: rgb(179, 175, 175);
+}
+.btn-primary {
+  background-color: #d0a5ec;
+  border-color: #c185e9;
+}
 .search {
   border-radius: 4px;
+  font-weight: 500;
+  background-color: #d0a5ec;
+  border-color: #c185e9;
 }
 .tempInfo {
   text-align: center;
@@ -70,7 +94,7 @@ a {
   max-width: 500px;
 }
 .container {
-  padding-top: 30px;
+  padding-top: 50px;
   max-width: 500px;
 }
 .main-emoji {
@@ -78,31 +102,23 @@ a {
   margin-right: 5px;
 }
 .temp-types {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: normal;
   position: relative;
-  bottom: 34px;
+  bottom: 32px;
 }
 .main-card {
-  border-width: 3px;
+  border-width: 1px;
   padding: 5px;
   width: 500px;
   margin: 0 auto;
-  border-radius: 6px;
+  border-radius: 12px;
 }
 
 a:hover {
   color: rgb(179, 10, 142);
 }
 
-.active {
-  color: black;
-  cursor: default;
-}
-.active:hover {
-  text-decoration: none;
-  color: black;
-}
 .col-2 {
   text-align: center;
   line-height: 1px;

@@ -60,23 +60,6 @@ function currentButton(event) {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-function showCelTemp(event) {
-  event.preventDefault();
-  farLink.classList.remove("active");
-  celLink.classList.add("active");
-  let celciusTemp = (fahrenheitTemperature - 32) / 1.8;
-  let tempurature = document.querySelector("#main-temp");
-  tempurature.innerHTML = Math.round(celciusTemp);
-}
-
-function showFarTemp(event) {
-  event.preventDefault();
-  celLink.classList.remove("active");
-  farLink.classList.add("active");
-  let tempurature = document.querySelector("#main-temp");
-  tempurature.innerHTML = Math.round(fahrenheitTemperature);
-}
-
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -92,9 +75,9 @@ function showForecast(response) {
 
   forecastRes.forEach(function (forecastDay, index) {
     if (index < 6) {
-    forecastHTML =
-      forecastHTML +
-      `
+      forecastHTML =
+        forecastHTML +
+        `
 <div class="col-2">
   <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
   <div class="weather-forecast-img">
@@ -106,8 +89,8 @@ function showForecast(response) {
     <span class="weather-forecast-temps-max" id="max">${Math.round(
       forecastDay.temp.max
     )}°</span>/<span class="weather-forecast-temps-min" id="min">${Math.round(
-        forecastDay.temp.min
-      )}°</span>
+          forecastDay.temp.min
+        )}°</span>
       
 </div>
 </div>
@@ -150,9 +133,3 @@ if (minutes < 10) {
 
 let h2 = document.querySelector("h2");
 h2.innerHTML = `${day} ${hour}:${minutes}`;
-
-let celLink = document.querySelector("#cel");
-celLink.addEventListener("click", showCelTemp);
-
-let farLink = document.querySelector("#far");
-farLink.addEventListener("click", showFarTemp);
